@@ -5,9 +5,15 @@ function currentWelkomPic(){
 }
 
 function changePic(){
-    var container = document.getElementsByClassName("background-image-container white-text-container");
+    var container = document.getElementsByName("01");
     //var style = container.getAttributeNode("style");
     //container.setAttribute("style", "background-image: url('./assets/images/Hackathon/Hackathon1.jpg')");
-    container.style.backgroundimage = "url('./assets/images/Hackathon/Hackathon1.jpg')";
+    container.values.getElementsByName = "url('./assets/images/Hackathon/Hackathon1.jpg')";
     return console.log("de foto is veranderd, ook op het scherm");
 }
+
+function init(){
+    changePic();
+}
+
+window.onload = init();
