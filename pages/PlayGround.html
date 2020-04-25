@@ -20,6 +20,7 @@
 
     <link href="../main.97292821.css" rel="stylesheet">
     <script src="../images.js"></script>
+    <script src="../PlayGround.js"></script>
 </head>
 
 <body>
@@ -47,21 +48,105 @@
     </header>
 
     <!-- Add your site or app content here -->
-    
-    
-    <div id="01" class="background-image-container white-text-container"
-        style= >
+
+
+    <div id="01" class="background-image-container white-text-container" style=>
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
                     <h1>The PlayGround</h1>
                     <p class="">This is where i play with things i have learned ressantly</p>
-                    
-                    <a href="../index.html" class="btn btn-succes.focus btn-lg" >Back to my home page</a>
+
+                    <a href="../index.html" class="btn btn-succes.focus btn-lg">Back to my home page</a>
                 </div>
             </div>
         </div>
+    </div>
+
+    <canvas id="PlayJS">
+
+    </canvas>
+
+    <div>
+        <style>
+            /* basic resets*/
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            /* adding a black bg to the background to make things clearer */
+            body {
+                background: black;
+            }
+
+            canvas {
+                display: block;
+            }
+        </style>
+
+        <script >
+            var c = document.getElementById("PlayJS");
+            var ctx = c.getContext("2d");
+
+            c.height = window.innerHeight;
+            c.width = window.innerWidth;
+
+            var dutch = "abcdefghijklmnopqrstuvwxyz";
+
+            dutch = dutch.split("");
+
+            var font_size = 10;
+            var columns = c.width / font_size; // number of columns for rain
+
+            //an array of drops - one for column
+
+            var drops = [];
+
+            //x below is the x coordinate
+            //1 = y co-ordinate of the drop
+
+            for (var x = x; x < columns; x++) {
+                drops[x] = 1;
+            }
+
+            //drawing the characters
+
+            function draw() {
+
+                //Black BG for the canvas
+                //translucent BG to show trail
+
+                ctx.fillStyle = "rgba(0,0,0.05)";
+
+                ctx.fillRect(0, 0, c.width, c.height);
+
+                ctx.fillStyle = "#0F0";
+                ctx.font = font_size + "px arial";
+
+                //loop over drops
+
+                for (var i = 0; i < drops.length; i++) {
+                    var text = dutch[Math.floor(Math.random() * dutch.length)];
+                    //x = i*font_size, y = value of drops[i]*font_size
+                    ctx.fillText(text, i * font_size, drops[i] * font_size);
+
+                    //sending the drop back to the top randomly after it has crossed the screen
+                    //adding a randomness to the reset to make the drops scattered on the Y axis
+
+                    if (drops[i] * font_size > c.height && Math.random() > 0.975)
+                        drops[i] = 0;
+
+                    //incrementing Y coordinate
+
+                    drops[i]++
+                }
+            }
+
+            setInterval(draw, 33);
+        </script>
+
     </div>
 
     <div class="footer-container white-text-container">
@@ -73,9 +158,10 @@
     </div>
 
     <div>
-        <iframe width="600" height="450" frameborder="0" style="border:0" 
-        src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJSVbdJNpzw0cRo2wGVDtMJLM&key=AIzaSyCQxWUGJyTrDpfV9v_Ihx1IX_s4vuH0xRA" allowfullscreen></iframe> 
-    
+        <iframe width="600" height="450" frameborder="0" style="border:0"
+            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJSVbdJNpzw0cRo2wGVDtMJLM&key=AIzaSyCQxWUGJyTrDpfV9v_Ihx1IX_s4vuH0xRA"
+            allowfullscreen></iframe>
+
     </div>
 
 </body>
