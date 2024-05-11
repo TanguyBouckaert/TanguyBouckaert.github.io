@@ -5708,3 +5708,8 @@ h2.text-center:after {
 }
 
 /*# sourceMappingURL=main.faaf51f9.map*/
+
+h1, #Black {
+    color: #000;
+    text-decoration-color: #000;
+}
