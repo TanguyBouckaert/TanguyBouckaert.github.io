@@ -5412,7 +5412,7 @@ body {
 }
 
 .footer-container {
-    background-color: #8acfc5;
+    background-color: #409ede;
     padding: 60px 0;
     margin-top: 30px
 }
@@ -5707,9 +5707,38 @@ h2.text-center:after {
     margin: 30px 30px 0 0
 }
 
-/*# sourceMappingURL=main.faaf51f9.map*/
-
 h1, #Black {
     color: #000;
     text-decoration-color: #000;
 }
+
+h1, #White {
+    color: white;
+    text-decoration-color: white;
+}
+
+.project-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+#profilepic {
+    width: 500px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.container-aboutme {
+    padding: 7%;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    align-self: center;
+}
+
+.footer {
+
+}
+
