@@ -5721,7 +5721,7 @@ h1, #White {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 40%;
+    width: 70%;
 }
 
 #profilepic {
@@ -5738,4 +5738,8 @@ h1, #White {
     align-self: center;
 }
 
+#make_smaller_bigger {
+    transform: scale(2);
+
+}
 
