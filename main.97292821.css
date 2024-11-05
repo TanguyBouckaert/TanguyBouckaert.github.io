@@ -5743,3 +5743,12 @@ h1, #White {
 
 }
 
+.skills_container {
+    display: flex;
+}
+
+.skills_column {
+    flex: 1 ;
+    padding: 10 px;
+}
+
